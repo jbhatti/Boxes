@@ -10,20 +10,17 @@
 
 @interface Box : NSObject
 
-@property (nonatomic) float height, width, length;
+@property float height;
+@property float width;
+@property float length;
+
 
 
 - (instancetype) initWithBox:(float)height andWidth:(float)width andLength:(float)length;
 
-- (id) initWithBoxVolume:(float)volume {
-        self = [super init];
-        if (self) {
-           // calculateVolume = [[Box calculateVolume] retain];
-        }
-        return self;
-    
-}
+- (float) volume;
 
+- (float)numOfBoxesInside:(Box *)boxOne;
 
 
 @end

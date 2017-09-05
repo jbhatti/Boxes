@@ -10,4 +10,27 @@
 
 @implementation Box
 
+-(instancetype)initWithBox:(float)height andWidth:(float)width andLength:(float)length {
+    if (self = [super init]) {
+        _height = height;
+        _length = length;
+        _width = width;
+    }
+        return self;
+    
+}
+    
+-(float)volume
+        {
+       float volumeTotal = self.height * self.width * self.length;
+            return volumeTotal;
+        }
+
+- (float)numOfBoxesInside:(Box *)boxOne
+    {
+        float numOfFits = self.volume / boxOne.volume;
+        return numOfFits;
+}
+
+
 @end
